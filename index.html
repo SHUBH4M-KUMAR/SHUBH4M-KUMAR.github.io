@@ -1,72 +1,542 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Your Name | Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shubham Kumar | Portfolio</title>
+    <style>
+        /* Base Styles */
+        :root {
+            --primary-color: #000;
+            --background-color: #fff;
+            --text-color: #333;
+            --light-gray: #f5f5f5;
+            --medium-gray: #e0e0e0;
+            --dark-gray: #888;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            letter-spacing: -1px;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            letter-spacing: -0.5px;
+            border-bottom: 1px solid var(--medium-gray);
+            padding-bottom: 0.5rem;
+            margin-top: 2.5rem;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            border-bottom: 1px solid var(--dark-gray);
+            transition: border-color 0.3s;
+        }
+
+        a:hover {
+            border-color: var(--primary-color);
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        header {
+            padding: 2rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav li {
+            margin-left: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            border-bottom: none;
+        }
+
+        nav a:hover {
+            color: var(--dark-gray);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            margin-bottom: 1.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--dark-gray);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--background-color);
+            padding: 0.75rem 1.5rem;
+            border: none;
+            font-weight: 500;
+            border-radius: 4px;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .cta:hover {
+            transform: translateY(-2px);
+            background: #333;
+        }
+
+        /* About Section */
+        .about {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+        .about-content {
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        .about-image {
+            flex: 0 0 300px;
+            height: 300px;
+            background-color: var(--light-gray);
+            border-radius: 4px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background-color: var(--light-gray);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-image {
+            height: 200px;
+            background-color: var(--medium-gray);
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+
+        .project-info h3 {
+            margin-top: 0;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+        }
+
+        .tag {
+            background-color: var(--medium-gray);
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-category h3 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .skill-list li::before {
+            content: "•";
+            margin-right: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 4rem 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            padding: 1.5rem;
+            background-color: var(--light-gray);
+            border-radius: 4px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem 0;
+            text-align: center;
+            background-color: var(--light-gray);
+        }
+
+        .footer-nav {
+            margin-bottom: 1rem;
+        }
+
+        .footer-nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .copyright {
+            color: var(--dark-gray);
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+            }
+
+            .about-image {
+                width: 100%;
+                margin-bottom: 2rem;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                flex-direction: column;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+            }
+
+            nav li {
+                margin-left: 1rem;
+                margin-right: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
-<body style="margin: 0; font-family: Arial, sans-serif; background-color: #f9f9f9; color: #333;">
+<body>
+    <header>
+        <div class="logo">Shubham</div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- Navbar -->
-  <div style="background-color: #fff; padding: 20px; border-bottom: 1px solid #ccc; position: sticky; top: 0;">
-    <div style="max-width: 900px; margin: auto; display: flex; justify-content: space-between; align-items: center;">
-      <h1 style="margin: 0; font-size: 24px; color: #007acc;">Your Name</h1>
-      <nav>
-        <a href="#about" style="margin-right: 20px; text-decoration: none; color: #333;">About</a>
-        <a href="#projects" style="margin-right: 20px; text-decoration: none; color: #333;">Projects</a>
-        <a href="#contact" style="text-decoration: none; color: #333;">Contact</a>
-      </nav>
-    </div>
-  </div>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Hello, I'm Shubham</h1>
+                <p class="subtitle">I design and build digital experiences with a focus on simplicity and functionality.</p>
+                <a href="#contact" class="cta">Get in Touch</a>
+            </div>
+        </section>
 
-  <!-- Hero Section -->
-  <div style="padding: 80px 20px; text-align: center; background-color: #fff;">
-    <h2 style="font-size: 36px; margin-bottom: 10px;">Hey, I'm <span style="color: #007acc;">Your Name</span></h2>
-    <p style="font-size: 18px; max-width: 600px; margin: auto;">Backend & Machine Learning Developer. I build scalable APIs, secure systems, and intelligent apps.</p>
-  </div>
+        <section id="about" class="about">
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <div class="about-image">
+                        <!-- Replace with your actual image -->
+                        <img src="/api/placeholder/300/300" alt="Your Name">
+                    </div>
+                    <div class="about-text">
+                        <p>Welcome to my portfolio! I'm a Machine Learning & backend developer passionate about creating Automated solutions. With 2 Years of experience in the industry, I've developed a keen eye for detail and a commitment to excellence.</p>
+                        
+                        <p>My journey began at DR. APJ Abdul Kalam Technical University, where I learned the foundations of Mehcanical Engineering. Since then, I've worked with various clients and teams to deliver Automated, Design, Fullstack and ML/AI related projects that not only meet but exceed expectations.</p>
+                        
+                        <p>I believe in experimenting and continuously strive to develop workflows of my own. When I'm not a Developer, you can find me Gaming or strumping the strings of a guitar.</p>
+                        
+                        <p>I'm always open to new opportunities and collaborations. Feel free to explore my work and get in touch if you'd like to discuss a potential project.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <!-- About -->
-  <div id="about" style="max-width: 900px; margin: 60px auto 40px; padding: 0 20px;">
-    <h3 style="font-size: 24px; border-bottom: 2px solid #007acc; display: inline-block; margin-bottom: 16px;">About Me</h3>
-    <p style="line-height: 1.6;">
-      I specialize in Python-based development with frameworks like Django, Flask, and Streamlit.
-      My work revolves around machine learning models, APIs, and secure backend infrastructure.
-    </p>
-  </div>
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2>Featured Projects</h2>
+                <div class="project-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="/api/placeholder/400/200" alt="Project 1">
+                        </div>
+                        <div class="project-info">
+                            <h3>PageYatra</h3>
+                            <p>PageYatra is a locally hosted, AI-powered web development environment that bridges the gap between creativity and code. With a simple prompt, generate fully functional React components, preview changes in real-time, and craft professional websites effortlessly.  </p>
+                            <div class="project-tags">
+                                <span class="tag">PythonL</span>
+                                <span class="tag">Generative AI</span>
+                                <span class="tag">Typescript</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="/api/placeholder/400/200" alt="Project 2">
+                        </div>
+                        <div class="project-info">
+                            <h3>Project Title 2</h3>
+                            <p>A brief description of the project, what problem it solves, and what technologies were used in its creation.</p>
+                            <div class="project-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">Node.js</span>
+                                <span class="tag">MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 3 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="/api/placeholder/400/200" alt="Project 3">
+                        </div>
+                        <div class="project-info">
+                            <h3>Project Title 3</h3>
+                            <p>A brief description of the project, what problem it solves, and what technologies were used in its creation.</p>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Django</span>
+                                <span class="tag">PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <!-- Projects -->
-  <div id="projects" style="max-width: 900px; margin: 60px auto 40px; padding: 0 20px;">
-    <h3 style="font-size: 24px; border-bottom: 2px solid #007acc; display: inline-block; margin-bottom: 16px;">Projects</h3>
+        <section id="skills" class="skills">
+            <div class="container">
+                <h2>Skills & Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Frontend</h3>
+                        <ul class="skill-list">
+                            <li>HTML5 & CSS3</li>
+                            <li>JavaScript (ES6+)</li>
+                            <li>React.js</li>
+                            <li>Responsive Design</li>
+                            <li>UI/UX Principles</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Backend</h3>
+                        <ul class="skill-list">
+                            <li>Node.js</li>
+                            <li>Express</li>
+                            <li>Python</li>
+                            <li>RESTful APIs</li>
+                            <li>Database Design</li>
+                        </ul>
+                    </div>
+                  <div class="skill-category">
+                        <h3>ML & AI</h3>
+                        <ul class="skill-list">
+                            <li>Tensorflow & Pytorch</li>
+                            <li>langchain</li>
+                            <li>RAG</li>
+                            <li>AI Agents</li>
+                            <li>RL</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Tools & Others</h3>
+                        <ul class="skill-list">
+                            <li>Git & GitHub</li>
+                            <li>VS Code</li>
+                            <li>Figma</li>
+                            <li>Command Line</li>
+                            <li>Agile Methodology</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <div style="margin-bottom: 30px;">
-      <h4 style="margin: 0;">Project_Arrow</h4>
-      <p style="margin: 4px 0;">AI-powered API suite for fraud detection & cybersecurity.</p>
-      <a href="https://github.com/yourusername/project_arrow" target="_blank" style="color: #007acc;">View on GitHub</a>
-    </div>
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Get In Touch</h2>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <h3>Email</h3>
+                        <p><a href="mailto:your.email@example.com">Shubhambpn1234@gmail.com</a></p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">🔗</div>
+                        <h3>LinkedIn</h3>
+                        <p><a href="https://linkedin.com/in/yourusername" target="_blank">linkedin.com/in/yourusername</a></p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">💻</div>
+                        <h3>GitHub</h3>
+                        <p><a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <div style="margin-bottom: 30px;">
-      <h4 style="margin: 0;">Virtual Guitar</h4>
-      <p style="margin: 4px 0;">Real-time guitar using webcam, MIDI sounds, and hand-tracking.</p>
-      <a href="https://github.com/yourusername/virtual_guitar" target="_blank" style="color: #007acc;">View on GitHub</a>
-    </div>
-
-    <!-- Add more projects as needed -->
-  </div>
-
-  <!-- Contact -->
-  <div id="contact" style="max-width: 900px; margin: 60px auto 60px; padding: 0 20px;">
-    <h3 style="font-size: 24px; border-bottom: 2px solid #007acc; display: inline-block; margin-bottom: 16px;">Contact</h3>
-    <p>Let’s work together or talk tech!</p>
-    <ul style="list-style: none; padding-left: 0;">
-      <li>Email: <a href="mailto:your.email@example.com" style="color: #007acc;">your.email@example.com</a></li>
-      <li>GitHub: <a href="https://github.com/yourusername" style="color: #007acc;">github.com/yourusername</a></li>
-      <li>LinkedIn: <a href="https://linkedin.com/in/yourusername" style="color: #007acc;">linkedin.com/in/yourusername</a></li>
-    </ul>
-  </div>
-
-  <!-- Footer -->
-  <footer style="text-align: center; font-size: 14px; color: #777; padding: 20px; background-color: #fff; border-top: 1px solid #ccc;">
-    © 2025 Your Name — All rights reserved.
-  </footer>
-
+    <footer>
+        <div class="container">
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <p class="copyright">© 2025 Shubham Kumar. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
