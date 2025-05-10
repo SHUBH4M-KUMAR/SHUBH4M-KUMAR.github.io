@@ -1,86 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name | Software Developer</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <title>Your Name | Portfolio</title>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body style="margin: 0; font-family: Arial, sans-serif; background-color: #f9f9f9; color: #333;">
 
   <!-- Navbar -->
-  <header class="bg-white shadow-sm sticky top-0 z-50">
-    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-blue-600">Your Name</h1>
-      <nav class="space-x-6">
-        <a href="#about" class="hover:text-blue-600 font-medium">About</a>
-        <a href="#projects" class="hover:text-blue-600 font-medium">Projects</a>
-        <a href="#contact" class="hover:text-blue-600 font-medium">Contact</a>
+  <div style="background-color: #fff; padding: 20px; border-bottom: 1px solid #ccc; position: sticky; top: 0;">
+    <div style="max-width: 900px; margin: auto; display: flex; justify-content: space-between; align-items: center;">
+      <h1 style="margin: 0; font-size: 24px; color: #007acc;">Your Name</h1>
+      <nav>
+        <a href="#about" style="margin-right: 20px; text-decoration: none; color: #333;">About</a>
+        <a href="#projects" style="margin-right: 20px; text-decoration: none; color: #333;">Projects</a>
+        <a href="#contact" style="text-decoration: none; color: #333;">Contact</a>
       </nav>
     </div>
-  </header>
+  </div>
 
   <!-- Hero Section -->
-  <section class="bg-white py-20">
-    <div class="max-w-6xl mx-auto px-4 text-center">
-      <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">Hi, I'm Your Name 👋</h2>
-      <p class="text-lg text-gray-600 mb-6">Backend & Machine Learning Developer | Building secure, scalable, and smart systems</p>
-      <a href="#projects" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">See My Work</a>
-    </div>
-  </section>
+  <div style="padding: 80px 20px; text-align: center; background-color: #fff;">
+    <h2 style="font-size: 36px; margin-bottom: 10px;">Hey, I'm <span style="color: #007acc;">Your Name</span></h2>
+    <p style="font-size: 18px; max-width: 600px; margin: auto;">Backend & Machine Learning Developer. I build scalable APIs, secure systems, and intelligent apps.</p>
+  </div>
 
   <!-- About -->
-  <section id="about" class="py-16 bg-gray-50">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <h3 class="text-2xl font-bold mb-4 text-blue-700">About Me</h3>
-      <p class="text-gray-700 leading-relaxed">
-        I'm a software developer with strong roots in backend (Django, Flask), ML (Sklearn, PyTorch), and secure systems. Whether it's an API, a dashboard, or a machine learning pipeline — if it's code, I'm in.
-      </p>
-    </div>
-  </section>
+  <div id="about" style="max-width: 900px; margin: 60px auto 40px; padding: 0 20px;">
+    <h3 style="font-size: 24px; border-bottom: 2px solid #007acc; display: inline-block; margin-bottom: 16px;">About Me</h3>
+    <p style="line-height: 1.6;">
+      I specialize in Python-based development with frameworks like Django, Flask, and Streamlit.
+      My work revolves around machine learning models, APIs, and secure backend infrastructure.
+    </p>
+  </div>
 
   <!-- Projects -->
-  <section id="projects" class="py-16 bg-white">
-    <div class="max-w-6xl mx-auto px-4">
-      <h3 class="text-2xl font-bold text-center text-blue-700 mb-12">Featured Projects</h3>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="p-6 bg-gray-100 rounded-lg shadow hover:shadow-lg transition">
-          <h4 class="text-xl font-semibold mb-2">Project_Arrow</h4>
-          <p class="text-gray-600 mb-2">AI-powered API suite for fraud detection, secure auth, and anomaly monitoring.</p>
-          <a href="https://github.com/yourusername/project_arrow" class="text-blue-600 hover:underline" target="_blank">GitHub ↗</a>
-        </div>
-        <div class="p-6 bg-gray-100 rounded-lg shadow hover:shadow-lg transition">
-          <h4 class="text-xl font-semibold mb-2">Virtual Guitar</h4>
-          <p class="text-gray-600 mb-2">Play guitar with just your webcam. Real-time hand tracking + MIDI + magic.</p>
-          <a href="https://github.com/yourusername/virtual_guitar" class="text-blue-600 hover:underline" target="_blank">GitHub ↗</a>
-        </div>
-        <!-- Add more cards if needed -->
-      </div>
+  <div id="projects" style="max-width: 900px; margin: 60px auto 40px; padding: 0 20px;">
+    <h3 style="font-size: 24px; border-bottom: 2px solid #007acc; display: inline-block; margin-bottom: 16px;">Projects</h3>
+
+    <div style="margin-bottom: 30px;">
+      <h4 style="margin: 0;">Project_Arrow</h4>
+      <p style="margin: 4px 0;">AI-powered API suite for fraud detection & cybersecurity.</p>
+      <a href="https://github.com/yourusername/project_arrow" target="_blank" style="color: #007acc;">View on GitHub</a>
     </div>
-  </section>
+
+    <div style="margin-bottom: 30px;">
+      <h4 style="margin: 0;">Virtual Guitar</h4>
+      <p style="margin: 4px 0;">Real-time guitar using webcam, MIDI sounds, and hand-tracking.</p>
+      <a href="https://github.com/yourusername/virtual_guitar" target="_blank" style="color: #007acc;">View on GitHub</a>
+    </div>
+
+    <!-- Add more projects as needed -->
+  </div>
 
   <!-- Contact -->
-  <section id="contact" class="py-16 bg-gray-50">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <h3 class="text-2xl font-bold text-blue-700 mb-4">Contact</h3>
-      <p class="mb-6 text-gray-600">Wanna collab or chat tech? I'm just an email or GitHub profile away.</p>
-      <div class="space-y-2">
-        <p>Email: <a href="mailto:your.email@example.com" class="text-blue-600 hover:underline">your.email@example.com</a></p>
-        <p>GitHub: <a href="https://github.com/yourusername" class="text-blue-600 hover:underline" target="_blank">github.com/yourusername</a></p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/yourusername" class="text-blue-600 hover:underline" target="_blank">linkedin.com/in/yourusername</a></p>
-      </div>
-    </div>
-  </section>
+  <div id="contact" style="max-width: 900px; margin: 60px auto 60px; padding: 0 20px;">
+    <h3 style="font-size: 24px; border-bottom: 2px solid #007acc; display: inline-block; margin-bottom: 16px;">Contact</h3>
+    <p>Let’s work together or talk tech!</p>
+    <ul style="list-style: none; padding-left: 0;">
+      <li>Email: <a href="mailto:your.email@example.com" style="color: #007acc;">your.email@example.com</a></li>
+      <li>GitHub: <a href="https://github.com/yourusername" style="color: #007acc;">github.com/yourusername</a></li>
+      <li>LinkedIn: <a href="https://linkedin.com/in/yourusername" style="color: #007acc;">linkedin.com/in/yourusername</a></li>
+    </ul>
+  </div>
 
   <!-- Footer -->
-  <footer class="bg-white border-t py-6 text-center text-sm text-gray-500 mt-12">
-    © 2025 Your Name. Built with ❤️ & Tailwind.
+  <footer style="text-align: center; font-size: 14px; color: #777; padding: 20px; background-color: #fff; border-top: 1px solid #ccc;">
+    © 2025 Your Name — All rights reserved.
   </footer>
 
 </body>
