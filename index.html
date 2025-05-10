@@ -1,1 +1,66 @@
-"Hello World" 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name | Portfolio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <header class="bg-white shadow py-4">
+    <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Your Name</h1>
+      <nav class="space-x-4">
+        <a href="#about" class="hover:text-blue-600">About</a>
+        <a href="#projects" class="hover:text-blue-600">Projects</a>
+        <a href="#contact" class="hover:text-blue-600">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 py-12">
+    <!-- About Section -->
+    <section id="about" class="mb-16">
+      <h2 class="text-xl font-semibold mb-4">👨‍💻 About Me</h2>
+      <p>
+        I'm a backend & ML developer working with Django, Flask, Streamlit, and all things Python.
+        I love building APIs, securing data, and shipping real stuff.
+      </p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="mb-16">
+      <h2 class="text-xl font-semibold mb-4">🛠 Projects</h2>
+      <ul class="space-y-4">
+        <li>
+          <strong>Project_Arrow</strong> – AI-powered API suite for fraud detection and security.
+          <br />
+          <a href="https://github.com/yourusername/project_arrow" target="_blank" class="text-blue-600 hover:underline">View on GitHub</a>
+        </li>
+        <li>
+          <strong>Virtual Guitar</strong> – Real-time guitar simulation with hand tracking and MIDI.
+          <br />
+          <a href="https://github.com/yourusername/virtual_guitar" target="_blank" class="text-blue-600 hover:underline">View on GitHub</a>
+        </li>
+        <!-- Add more here -->
+      </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2 class="text-xl font-semibold mb-4">📬 Contact</h2>
+      <p>Reach out via email or connect on GitHub:</p>
+      <ul>
+        <li>Email: <a href="mailto:your.email@example.com" class="text-blue-600">your.email@example.com</a></li>
+        <li>GitHub: <a href="https://github.com/yourusername" target="_blank" class="text-blue-600">github.com/yourusername</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="bg-white border-t py-4 mt-12 text-center text-sm text-gray-500">
+    © 2025 Your Name. All rights reserved.
+  </footer>
+
+</body>
+</html>
